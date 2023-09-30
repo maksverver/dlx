@@ -12,7 +12,4 @@ bedlam_cube: bedlam_cube.o dlx.o
 	$(CC) $(CFLAGS) -o bedlam_cube bedlam_cube.o dlx.o
 
 clean:
-	-rm *.o
-	-rm dlx
-	-rm pentos
-	-rm bedlam_cube
+	-rm -f *.o dlx pentos bedlam_cube

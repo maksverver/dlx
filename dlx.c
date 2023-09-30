@@ -104,10 +104,8 @@ int dlx_solve(dlx_Node *header, callback_t callback, void *data)
 {
     int result;
     int rows[header->data.max_depth];
+    /* NB. rows - 1 is technically undefined behavior */
     ResultHandler rh = { rows - 1, rows, callback, data };
-
-    if(rows == NULL)
-        return -1;
 
     result = dlx_search(header, &rh);
 
